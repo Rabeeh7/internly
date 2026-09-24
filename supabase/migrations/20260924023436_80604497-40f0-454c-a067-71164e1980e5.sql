@@ -1,0 +1,10 @@
+REVOKE EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.is_admin() FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.my_role() FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.my_institution_id() FROM anon, public;
+REVOKE EXECUTE ON FUNCTION public.owns_application(uuid) FROM anon, public;
+GRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO authenticated;
+GRANT EXECUTE ON FUNCTION public.is_admin() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.my_role() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.my_institution_id() TO authenticated;
+GRANT EXECUTE ON FUNCTION public.owns_application(uuid) TO authenticated;
